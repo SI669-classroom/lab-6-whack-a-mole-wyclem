@@ -16,10 +16,11 @@ export class MoleHole {
 
         this.nativeAudio.preloadSimple('squish', '../assets/squish.mp3');
         //.then(onSuccess, onError);
+        
     }
 
     showMole(duration) {
-        // If the mole is already out, 
+        // If the mole is already out,
         if(this.moleState === 0) {
             this.moleState = 1;
             let that = this;

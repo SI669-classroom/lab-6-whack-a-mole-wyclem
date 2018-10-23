@@ -9,7 +9,7 @@ export class DataProvider {
   }
 
   getData(): Promise<any> {
-    return this.storage.get('leaderboard');  
+    return this.storage.get('leaderboard');
   }
 
   save(data): void {
@@ -25,6 +25,8 @@ export class DataProvider {
     });
 
     let newData = JSON.stringify(saveData);
-    this.storage.set('leaderboard', newData);
+    this.storage.set('leaderboard', newData).then(() => {
+      console.log("Stored");
+    })
   }
 }
